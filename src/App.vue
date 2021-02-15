@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Header />
+  <sc-card card-title="asdf"></sc-card>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from "@/components/Header";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Header },
+  data() {
+    return {
+      blah: "test",
+    };
+  },
+  methods: {
+    updateBlah(e) {
+      this.blah = e.target.value;
+    },
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  min-height: 100vh;
+  --sc-bg-color: #191414;
+  --sc-text-color: #ffffff;
+  --sc-highlight-color: rgba(255, 255, 255, 0.4);
+  --sc-shadow-color: rgba(0, 0, 0, 0.17);
+  --sc-secondary-color: #1db954;
+  --sc-active-color: #24d54a;
+  sc-button {
+    --sc-button-bg-color: #1db954;
+    --sc-button-text-hover-color: #fff;
+  }
 }
 </style>
